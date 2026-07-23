@@ -432,16 +432,15 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            background: var(--bg-secondary);
             border: 4px solid var(--bg-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Sora', sans-serif;
-            font-size: 5rem;
-            font-weight: 800;
-            color: var(--accent-cyan);
-            background: radial-gradient(circle at 30% 30%, rgba(108, 92, 231, 0.4), var(--bg-secondary));
+            overflow: hidden;
+        }
+        .avatar-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 50%;
         }
 
         .floating-tech-badge {
@@ -1041,7 +1040,7 @@
                 <div class="hero-image-wrapper reveal">
                     <div class="avatar-glow-ring">
                         <div class="avatar-inner">
-                            MF
+                            <img src="images/Farrokh Portfolio Image.jpeg" alt="Muhammad Farrukh - Full Stack Developer" />
                         </div>
                     </div>
                     <div class="floating-tech-badge badge-1">
