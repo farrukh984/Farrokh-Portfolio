@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Farrukh · Senior Full-Stack Engineer & Web Developer Portfolio. Building scalable, modern, and high-performance web applications." />
-    <title>Farrukh · Senior Full-Stack Engineer & Web Developer</title>
+    <meta name="description" content="Professional portfolio of Muhammad Farrukh, an expert Full Stack Software Developer in Karachi specializing in Laravel, ASP.NET Core, PHP, JavaScript, C#, and Angular." />
+    <meta name="keywords" content="Muhammad Farrukh, Full Stack Developer, Software Engineer, Laravel Developer, ASP.NET Developer, Karachi, Pakistan Web Developer" />
+    <meta name="author" content="Muhammad Farrukh" />
+    <title>Muhammad Farrukh · Full Stack Software Developer</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -17,32 +19,35 @@
     <!-- Devicon SVG Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
 
+    <!-- SweetAlert2 Premium Notifications -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" />
+
     <!-- EmailJS SDK -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <style>
         /* ===== DESIGN SYSTEM & TOKENS ===== */
         :root {
             --bg-primary: #060813;
             --bg-secondary: #0b0f24;
-            --bg-card: rgba(18, 23, 49, 0.65);
-            --bg-card-hover: rgba(28, 35, 73, 0.85);
-            --border-card: rgba(255, 255, 255, 0.07);
-            --border-glow: rgba(108, 92, 231, 0.4);
+            --bg-card: rgba(18, 23, 49, 0.7);
+            --bg-card-hover: rgba(28, 35, 73, 0.9);
+            --border-card: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(108, 92, 231, 0.45);
 
             --text-primary: #f5f7ff;
             --text-secondary: #a3b1d6;
-            --text-muted: #62729e;
+            --text-muted: #6b7aa3;
 
             --accent-primary: #6c5ce7;
             --accent-cyan: #00cec9;
             --accent-pink: #fd79a8;
-            --accent-amber: #fdcb6e;
+            --accent-gold: #d4a04a;
             --accent-green: #00b894;
 
             --gradient-primary: linear-gradient(135deg, #6c5ce7 0%, #00cec9 100%);
+            --gradient-gold: linear-gradient(135deg, #d4a04a 0%, #e8bb6a 100%);
             --gradient-glow: linear-gradient(135deg, #fd79a8 0%, #6c5ce7 50%, #00cec9 100%);
-            --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
 
             --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.5);
             --shadow-glow: 0 15px 45px rgba(108, 92, 231, 0.25);
@@ -133,7 +138,7 @@
         .reveal {
             opacity: 0;
             transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .reveal.active {
             opacity: 1;
@@ -142,7 +147,7 @@
         .reveal-left {
             opacity: 0;
             transform: translateX(-50px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .reveal-left.active {
             opacity: 1;
@@ -151,7 +156,7 @@
         .reveal-right {
             opacity: 0;
             transform: translateX(50px);
-            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .reveal-right.active {
             opacity: 1;
@@ -167,7 +172,7 @@
             transition: var(--transition);
         }
         .navbar.scrolled {
-            background: rgba(6, 8, 19, 0.85);
+            background: rgba(6, 8, 19, 0.88);
             backdrop-filter: blur(20px) saturate(180%);
             padding: 14px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -218,9 +223,7 @@
             transition: var(--transition);
             position: relative;
         }
-        .nav-links a:hover {
-            color: var(--text-primary);
-        }
+        .nav-links a:hover { color: var(--text-primary); }
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -309,7 +312,7 @@
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.8rem;
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 22px;
@@ -321,10 +324,18 @@
             -webkit-text-fill-color: transparent;
         }
 
+        .typed-cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+            color: var(--accent-cyan);
+            margin-left: 4px;
+        }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
         .hero p {
-            font-size: 1.15rem;
+            font-size: 1.12rem;
             color: var(--text-secondary);
-            max-width: 540px;
+            max-width: 550px;
             margin-bottom: 36px;
             line-height: 1.8;
         }
@@ -404,8 +415,8 @@
             align-items: center;
         }
         .avatar-glow-ring {
-            width: 380px;
-            height: 380px;
+            width: 370px;
+            height: 370px;
             border-radius: 50%;
             padding: 6px;
             background: var(--gradient-glow);
@@ -421,20 +432,22 @@
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            overflow: hidden;
-            background-color: var(--bg-secondary);
+            background: var(--bg-secondary);
             border: 4px solid var(--bg-primary);
-        }
-        .avatar-inner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Sora', sans-serif;
+            font-size: 5rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            background: radial-gradient(circle at 30% 30%, rgba(108, 92, 231, 0.4), var(--bg-secondary));
         }
 
         .floating-tech-badge {
             position: absolute;
             padding: 12px 20px;
-            background: rgba(18, 23, 49, 0.85);
+            background: rgba(18, 23, 49, 0.88);
             backdrop-filter: blur(16px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: var(--radius-md);
@@ -458,7 +471,7 @@
         }
         .section-header {
             text-align: center;
-            max-width: 620px;
+            max-width: 650px;
             margin: 0 auto 60px;
         }
         .section-header .tag {
@@ -493,7 +506,7 @@
         /* ===== ABOUT SECTION ===== */
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.1fr;
             gap: 60px;
             align-items: center;
         }
@@ -533,7 +546,7 @@
             font-weight: 600;
         }
         .info-card .value {
-            font-size: 1rem;
+            font-size: 0.98rem;
             font-weight: 700;
             color: var(--text-primary);
             margin-top: 4px;
@@ -584,7 +597,7 @@
         /* ===== SKILLS SECTION ===== */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 22px;
         }
         .skill-card {
@@ -696,6 +709,7 @@
             position: relative;
             height: 230px;
             overflow: hidden;
+            background: #09090b;
         }
         .project-thumb img {
             width: 100%;
@@ -734,6 +748,7 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
             border: none;
             cursor: pointer;
+            text-decoration: none;
         }
         .btn-icon:hover { transform: scale(1.15); }
 
@@ -764,119 +779,10 @@
         }
         .project-info p {
             color: var(--text-secondary);
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             line-height: 1.6;
             margin-bottom: 20px;
         }
-
-        /* ===== EXPERIENCE & TIMELINE ===== */
-        .timeline {
-            max-width: 840px;
-            margin: 0 auto;
-            position: relative;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 20px; top: 0; bottom: 0;
-            width: 2px;
-            background: var(--gradient-primary);
-            opacity: 0.3;
-        }
-        .timeline-item {
-            position: relative;
-            padding-left: 60px;
-            margin-bottom: 45px;
-        }
-        .timeline-item:last-child { margin-bottom: 0; }
-        .timeline-dot {
-            position: absolute;
-            left: 12px; top: 8px;
-            width: 18px; height: 18px;
-            border-radius: 50%;
-            background: var(--gradient-primary);
-            box-shadow: 0 0 15px var(--accent-primary);
-            border: 3px solid var(--bg-primary);
-        }
-        .timeline-card {
-            background: var(--bg-card);
-            padding: 26px 30px;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-card);
-            transition: var(--transition);
-        }
-        .timeline-card:hover {
-            border-color: var(--border-glow);
-            transform: translateX(8px);
-        }
-        .timeline-date {
-            font-size: 0.82rem;
-            font-weight: 700;
-            color: var(--accent-cyan);
-            margin-bottom: 4px;
-            display: inline-block;
-        }
-        .timeline-card h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-        .timeline-company {
-            font-size: 0.92rem;
-            color: var(--text-muted);
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        /* ===== TESTIMONIALS SECTION ===== */
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 28px;
-        }
-        .testimonial-card {
-            background: var(--bg-card);
-            padding: 32px;
-            border-radius: var(--radius-lg);
-            border: 1px solid var(--border-card);
-            transition: var(--transition);
-        }
-        .testimonial-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--border-glow);
-        }
-        .rating-stars {
-            color: var(--accent-amber);
-            font-size: 0.95rem;
-            margin-bottom: 16px;
-            display: flex;
-            gap: 4px;
-        }
-        .testimonial-text {
-            font-size: 0.98rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-            margin-bottom: 22px;
-            font-style: italic;
-        }
-        .client-profile {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-        .client-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--gradient-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-weight: 800;
-            font-size: 1.1rem;
-        }
-        .client-info h4 { font-size: 1rem; font-weight: 700; }
-        .client-info p { font-size: 0.82rem; color: var(--text-muted); }
 
         /* ===== CONTACT SECTION ===== */
         .contact-grid {
@@ -899,24 +805,27 @@
             align-items: center;
             gap: 18px;
             margin-bottom: 22px;
-            cursor: pointer;
-            padding: 12px;
+            padding: 14px;
             border-radius: var(--radius-md);
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
             transition: var(--transition);
+            text-decoration: none;
         }
         .contact-method:hover {
-            background: rgba(255, 255, 255, 0.03);
+            border-color: var(--border-glow);
+            transform: translateX(6px);
         }
         .contact-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 16px;
-            background: var(--bg-card);
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: var(--bg-secondary);
             border: 1px solid var(--border-card);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--accent-cyan);
             flex-shrink: 0;
         }
@@ -925,9 +834,10 @@
             color: var(--text-muted);
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            font-weight: 600;
         }
         .contact-text .value {
-            font-size: 1.05rem;
+            font-size: 1rem;
             font-weight: 700;
             color: var(--text-primary);
         }
@@ -970,10 +880,12 @@
         }
         .form-group label {
             display: block;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             font-weight: 600;
             color: var(--text-secondary);
             margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .form-control {
             width: 100%;
@@ -993,7 +905,7 @@
         }
         textarea.form-control {
             resize: vertical;
-            min-height: 140px;
+            min-height: 130px;
         }
 
         /* ===== FOOTER ===== */
@@ -1009,62 +921,16 @@
             font-size: 0.92rem;
         }
 
-        /* ===== PROJECT MODAL ===== */
-        .modal-backdrop {
-            position: fixed;
-            inset: 0;
-            background: rgba(6, 8, 19, 0.88);
-            backdrop-filter: blur(12px);
-            z-index: 10000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-            opacity: 0;
-            pointer-events: none;
-            transition: var(--transition);
+        /* SweetAlert Dark Custom Style */
+        .swal-dark-popup {
+            background: #0d1126 !important;
+            border: 1px solid var(--border-glow) !important;
+            border-radius: 20px !important;
+            color: var(--text-primary) !important;
         }
-        .modal-backdrop.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-        .modal-card {
-            background: #0d1126;
-            border: 1px solid var(--border-glow);
-            border-radius: var(--radius-lg);
-            max-width: 720px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 35px;
-            position: relative;
-            transform: scale(0.9);
-            transition: var(--transition);
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8);
-        }
-        .modal-backdrop.active .modal-card { transform: scale(1); }
-        .modal-close {
-            position: absolute;
-            top: 20px; right: 20px;
-            width: 36px; height: 36px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.08);
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .modal-close:hover { background: var(--accent-pink); }
-        .modal-img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            border-radius: var(--radius-md);
-            margin-bottom: 22px;
+        .swal-dark-popup .swal2-title {
+            color: var(--text-primary) !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
         }
 
         /* ===== RESPONSIVE MEDIA QUERIES ===== */
@@ -1116,15 +982,13 @@
         <div class="container">
             <a href="#" class="logo">
                 <div class="logo-box"><i class="fas fa-code"></i></div>
-                Farrukh<span>.dev</span>
+                MF<span>.dev</span>
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact" class="btn-nav-cta"><i class="fas fa-paper-plane"></i> Let's Talk</a></li>
+                <li><a href="#contact" class="btn-nav-cta"><i class="fas fa-paper-plane"></i> Hire Me</a></li>
             </ul>
             <div class="hamburger" id="hamburger">
                 <span></span>
@@ -1140,35 +1004,36 @@
             <div class="hero-grid">
                 <div class="hero-text-content">
                     <div class="hero-badge reveal">
-                        <span class="status-dot"></span> Available for Senior Roles &amp; Freelance Projects
+                        <span class="status-dot"></span> Available for Full-Time Roles &amp; Opportunities
                     </div>
                     <h1 class="reveal">
-                        Hi, I'm <span class="highlight">Farrukh</span><br />
-                        <span class="highlight">Full-Stack Engineer</span>
+                        Muhammad <span class="highlight">Farrukh</span><br />
+                        <span class="highlight typed-role" id="typedRole">Full Stack Software Developer</span>
+                        <span class="typed-cursor"></span>
                     </h1>
                     <p class="reveal">
-                        Architecting robust, high-performance web platforms and scalable full-stack applications with clean code, elegant UI design, and modern technologies.
+                        Based in Karachi — passionate about crafting exceptional, high-performance web experiences. I engineer robust, secure full-stack applications using Laravel, ASP.NET Core, PHP, and C#, while mastering Angular to build next-generation user interfaces.
                     </p>
                     <div class="hero-actions reveal">
                         <a href="#projects" class="btn-primary">
-                            <i class="fas fa-rocket"></i> View Featured Work
+                            View Live Projects <i class="fas fa-arrow-right"></i>
                         </a>
                         <a href="#contact" class="btn-secondary">
-                            <i class="fas fa-envelope"></i> Get In Touch
+                            Get In Touch <i class="fas fa-envelope"></i>
                         </a>
                     </div>
                     <div class="hero-stats reveal">
                         <div class="stat-item">
-                            <h3>5+</h3>
-                            <p>Years Experience</p>
+                            <h3 data-target="6">0</h3>
+                            <p>Projects Live</p>
                         </div>
                         <div class="stat-item">
-                            <h3>40+</h3>
-                            <p>Projects Delivered</p>
+                            <h3 data-target="3">0</h3>
+                            <p>Semesters Completed</p>
                         </div>
                         <div class="stat-item">
-                            <h3>99%</h3>
-                            <p>Client Satisfaction</p>
+                            <h3 data-target="11">0</h3>
+                            <p>Technologies Mastered</p>
                         </div>
                     </div>
                 </div>
@@ -1176,14 +1041,14 @@
                 <div class="hero-image-wrapper reveal">
                     <div class="avatar-glow-ring">
                         <div class="avatar-inner">
-                            <img src="assets/images/farrukh_profile.png" alt="Farrukh Profile Portrait" />
+                            MF
                         </div>
                     </div>
                     <div class="floating-tech-badge badge-1">
-                        <i class="devicon-react-original colored" style="font-size:1.4rem;"></i> React &amp; Next.js
+                        <i class="devicon-laravel-plain colored" style="font-size:1.4rem;"></i> Laravel &amp; PHP
                     </div>
                     <div class="floating-tech-badge badge-2">
-                        <i class="devicon-nodejs-plain colored" style="font-size:1.4rem;"></i> Node &amp; Cloud API
+                        <i class="devicon-dotnetcore-plain colored" style="font-size:1.4rem;"></i> ASP.NET &amp; C#
                     </div>
                 </div>
             </div>
@@ -1195,34 +1060,34 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="tag">About Me</span>
-                <h2>Architecting <span class="highlight">Digital Solutions</span></h2>
-                <p>Passionate software engineer focused on speed, precision, and enterprise quality</p>
+                <h2>Let's Build Something <span class="highlight">Truly Exceptional</span></h2>
+                <p>Full Stack Software Developer pursuing Advanced Software Engineering Diploma in Karachi</p>
             </div>
             <div class="about-grid">
                 <div class="about-content reveal-left">
-                    <h3>Transforming Complex Requirements into <span class="highlight" style="background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Seamless Software</span></h3>
+                    <h3>Engineering High-Performance <span class="highlight" style="background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Web Systems</span></h3>
                     <p>
-                        I specialize in designing end-to-end full-stack architectures. From responsive micro-frontend interfaces to resilient cloud backends, I bring technical innovation and pragmatic engineering to every codebase.
+                        I am Muhammad Farrukh, a highly motivated Full Stack Software Developer based in Karachi, Pakistan. Currently pursuing an Advanced Software Engineering Diploma at Aptech Computer Education, I have maintained stellar academic grades and successfully cleared 3 semesters with excellent hands-on project deployments.
                     </p>
                     <p>
-                        Whether building real-time dashboards, SaaS platforms, or e-commerce ecosystems, my code focuses on performance optimization, maintainability, and clean UI aesthetics.
+                        My core skill set covers robust backend systems, REST APIs, and interactive frontend interfaces using Laravel, ASP.NET Core, C#, PHP, MySQL, and Microsoft SQL Server. I am currently learning advanced Angular architectures to create high-performing enterprise-grade applications.
                     </p>
                     <div class="about-info-cards">
                         <div class="info-card">
                             <div class="label">Name</div>
-                            <div class="value">Farrukh</div>
+                            <div class="value">Muhammad Farrukh</div>
                         </div>
                         <div class="info-card">
-                            <div class="label">Specialization</div>
-                            <div class="value">Full-Stack Web &amp; API</div>
+                            <div class="label">Location</div>
+                            <div class="value">Karachi, Pakistan</div>
                         </div>
                         <div class="info-card">
-                            <div class="label">Experience</div>
-                            <div class="value">5+ Years Industry</div>
+                            <div class="label">Education</div>
+                            <div class="value">Aptech Engineering Diploma</div>
                         </div>
                         <div class="info-card">
-                            <div class="label">Availability</div>
-                            <div class="value">Remote &amp; Contract</div>
+                            <div class="label">Languages</div>
+                            <div class="value">English &amp; Urdu</div>
                         </div>
                     </div>
                 </div>
@@ -1235,20 +1100,20 @@
                                 <div class="dot dot-yellow"></div>
                                 <div class="dot dot-green"></div>
                             </div>
-                            <div class="code-title">engineer.js</div>
+                            <div class="code-title">developer.cs</div>
                         </div>
                         <div class="code-body">
-                            <div><span class="kw">const</span> <span class="var">engineer</span> = {</div>
-                            <div>&nbsp;&nbsp;name: <span class="str">'Farrukh'</span>,</div>
-                            <div>&nbsp;&nbsp;role: <span class="str">'Senior Full-Stack Engineer'</span>,</div>
-                            <div>&nbsp;&nbsp;coreStack: [<span class="str">'React'</span>, <span class="str">'Next.js'</span>, <span class="str">'Node'</span>, <span class="str">'Python'</span>],</div>
-                            <div>&nbsp;&nbsp;databases: [<span class="str">'PostgreSQL'</span>, <span class="str">'MongoDB'</span>],</div>
-                            <div>&nbsp;&nbsp;status: <span class="str">'Ready for New Challenges'</span>,</div>
-                            <div>&nbsp;&nbsp;<span class="fn">deliverValue</span>: <span class="kw">function</span>() {</div>
-                            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="str">'High-Performance Scalable Software'</span>;</div>
+                            <div><span class="kw">public class</span> <span class="var">Developer</span></div>
+                            <div>{</div>
+                            <div>&nbsp;&nbsp;<span class="kw">public string</span> Name = <span class="str">"Muhammad Farrukh"</span>;</div>
+                            <div>&nbsp;&nbsp;<span class="kw">public string</span> Role = <span class="str">"Full Stack Software Developer"</span>;</div>
+                            <div>&nbsp;&nbsp;<span class="kw">public string[]</span> CoreStack = { <span class="str">"Laravel"</span>, <span class="str">"ASP.NET Core"</span>, <span class="str">"PHP"</span>, <span class="str">"Angular"</span> };</div>
+                            <div>&nbsp;&nbsp;<span class="kw">public string[]</span> Databases = { <span class="str">"MySQL"</span>, <span class="str">"MS SQL Server"</span> };</div>
+                            <div>&nbsp;&nbsp;<span class="kw">public void</span> BuildSystem()</div>
+                            <div>&nbsp;&nbsp;{</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;Console.WriteLine(<span class="str">"Deploying Scalable Enterprise Applications"</span>);</div>
                             <div>&nbsp;&nbsp;}</div>
-                            <div>};</div>
-                            <div><span class="cmt">// Build better apps faster</span></div>
+                            <div>}</div>
                         </div>
                     </div>
                 </div>
@@ -1261,11 +1126,11 @@
         <div class="container">
             <div class="section-header reveal">
                 <span class="tag">Technical Stack</span>
-                <h2>My Technical <span class="highlight">Expertise</span></h2>
-                <p>Modern frameworks, languages, and cloud tools I use daily</p>
+                <h2>Core <span class="highlight">Technologies</span></h2>
+                <p>I build fully responsive, secure, and performant web systems using industry-standard technologies</p>
             </div>
             <div class="skills-grid" id="skillsContainer">
-                <!-- Dynamically rendered via JS with Devicon vector icons -->
+                <!-- Dynamically rendered via JS -->
             </div>
         </div>
     </section>
@@ -1274,50 +1139,22 @@
     <section class="section" id="projects">
         <div class="container">
             <div class="section-header reveal">
-                <span class="tag">Portfolio</span>
-                <h2>Featured <span class="highlight">Projects</span></h2>
-                <p>A selection of recent production web applications and platforms</p>
+                <span class="tag">Featured Work</span>
+                <h2>My Live <span class="highlight">Portfolio Projects</span></h2>
+                <p>Real-world web platforms, dynamic portals, and enterprise solutions</p>
             </div>
 
             <!-- Project Filters -->
             <div class="project-filters reveal">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
-                <button class="filter-btn" data-filter="saas">AI &amp; SaaS</button>
-                <button class="filter-btn" data-filter="fintech">Fintech &amp; Web</button>
+                <button class="filter-btn active" data-filter="all">All Work</button>
+                <button class="filter-btn" data-filter="static">Static Web</button>
+                <button class="filter-btn" data-filter="php">PHP Core</button>
+                <button class="filter-btn" data-filter="laravel">Laravel Apps</button>
             </div>
 
             <!-- Projects Grid -->
             <div class="projects-grid" id="projectsContainer">
-                <!-- Dynamically injected by JS with real mockups -->
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== WORK EXPERIENCE SECTION ===== -->
-    <section class="section" id="experience" style="background:var(--bg-secondary);">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="tag">Career History</span>
-                <h2>Professional <span class="highlight">Experience</span></h2>
-                <p>My journey in software engineering and web development</p>
-            </div>
-            <div class="timeline" id="timelineContainer">
-                <!-- Injected by JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== TESTIMONIALS SECTION ===== -->
-    <section class="section" id="testimonials">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="tag">Testimonials</span>
-                <h2>Client <span class="highlight">Feedback</span></h2>
-                <p>What engineering leads and business partners say</p>
-            </div>
-            <div class="testimonials-grid" id="testimonialsContainer">
-                <!-- Injected by JS -->
+                <!-- Dynamically injected by JS -->
             </div>
         </div>
     </section>
@@ -1326,69 +1163,68 @@
     <section class="section" id="contact" style="background:var(--bg-secondary);">
         <div class="container">
             <div class="section-header reveal">
-                <span class="tag">Contact</span>
-                <h2>Let's Start a <span class="highlight">Conversation</span></h2>
-                <p>Have a new project or engineering opportunity? Send a message below!</p>
+                <span class="tag">Get In Touch</span>
+                <h2>Let's Work <span class="highlight">Together!</span></h2>
+                <p>Have an exciting project, a job opportunity, or just want to discuss ideas? Send a message below!</p>
             </div>
             <div class="contact-grid">
                 <div class="contact-details reveal-left">
                     <h3>Let's Build Something <span class="highlight" style="background:var(--gradient-primary);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Exceptional</span></h3>
                     <p>
-                        I'm always open to discussing tech stack decisions, freelance projects, or full-time roles. Click on any contact detail below to copy.
+                        Feel free to contact me directly via email or phone. I'm always open to new software development roles and collaborations.
                     </p>
 
-                    <div class="contact-method" onclick="copyToClipboard('farrukh984@gmail.com', 'Email address copied!')">
+                    <a href="mailto:farrokh984@gmail.com" class="contact-method">
                         <div class="contact-icon"><i class="fas fa-envelope"></i></div>
                         <div class="contact-text">
-                            <div class="label">Email Address</div>
-                            <div class="value">farrukh984@gmail.com</div>
+                            <div class="label">Email</div>
+                            <div class="value">farrokh984@gmail.com</div>
                         </div>
-                    </div>
+                    </a>
 
-                    <div class="contact-method" onclick="copyToClipboard('+92 300 1234567', 'Phone number copied!')">
+                    <a href="tel:03708541533" class="contact-method">
                         <div class="contact-icon"><i class="fas fa-phone"></i></div>
                         <div class="contact-text">
                             <div class="label">Phone / WhatsApp</div>
-                            <div class="value">+92 300 1234567</div>
+                            <div class="value">+92 370-8541533</div>
                         </div>
-                    </div>
+                    </a>
 
                     <div class="contact-method">
                         <div class="contact-icon"><i class="fas fa-location-dot"></i></div>
                         <div class="contact-text">
                             <div class="label">Location</div>
-                            <div class="value">Karachi, Pakistan (Worldwide Remote)</div>
+                            <div class="value">Orangi Town Sec 7-F St 40, Karachi</div>
                         </div>
                     </div>
 
                     <div class="social-links">
                         <a href="https://github.com/farrukh984" target="_blank" class="social-btn" title="GitHub Profile"><i class="fab fa-github"></i></a>
-                        <a href="#" target="_blank" class="social-btn" title="LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" target="_blank" class="social-btn" title="Twitter Profile"><i class="fab fa-twitter"></i></a>
-                        <a href="#" target="_blank" class="social-btn" title="Dev.to"><i class="fab fa-dev"></i></a>
+                        <a href="mailto:farrokh984@gmail.com" class="social-btn" title="Email Me"><i class="fas fa-envelope"></i></a>
+                        <a href="https://wa.me/923708541533" target="_blank" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
                 <div class="contact-form-card reveal-right">
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="user_name">Your Name</label>
-                            <input type="text" id="user_name" name="user_name" class="form-control" placeholder="e.g. Alex Mercer" required />
+                            <label for="contactName">Your Name</label>
+                            <input type="text" id="contactName" name="user_name" class="form-control" placeholder="John Doe" required />
                         </div>
                         <div class="form-group">
-                            <label for="user_email">Your Email Address</label>
-                            <input type="email" id="user_email" name="user_email" class="form-control" placeholder="alex@company.com" required />
+                            <label for="contactEmail">Email Address</label>
+                            <input type="email" id="contactEmail" name="user_email" class="form-control" placeholder="john@example.com" required />
                         </div>
                         <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Project Inquiry / Hiring" required />
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" id="contactSubject" name="subject" class="form-control" placeholder="Project Inquiry / Job Opportunity" required />
                         </div>
                         <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" class="form-control" placeholder="Share project details or ideas..." required></textarea>
+                            <label for="contactMessage">Your Message</label>
+                            <textarea id="contactMessage" name="message" class="form-control" placeholder="Tell me about your amazing project details..." required></textarea>
                         </div>
                         <button type="submit" class="btn-primary" style="width:100%; justify-content:center;" id="submitBtn">
-                            <i class="fas fa-paper-plane"></i> Send Message
+                            Send Message <i class="fas fa-paper-plane" style="margin-left:8px;"></i>
                         </button>
                     </form>
                 </div>
@@ -1400,146 +1236,101 @@
     <footer class="footer">
         <div class="container">
             <p>
-                &copy; 2026 <strong>Farrukh</strong> &middot; Built with engineering precision,
-                <i class="fas fa-heart" style="color:var(--accent-pink); margin: 0 4px;"></i> and clean code.
+                &copy; 2026 <strong>Muhammad Farrukh</strong> &middot; Karachi, Pakistan &middot; Built with engineering precision
             </p>
         </div>
     </footer>
 
-    <!-- ===== PROJECT DETAILS MODAL ===== -->
-    <div class="modal-backdrop" id="projectModal">
-        <div class="modal-card">
-            <button class="modal-close" onclick="closeProjectModal()"><i class="fas fa-xmark"></i></button>
-            <img id="modalImg" src="" alt="Project Preview" class="modal-img" />
-            <h3 id="modalTitle" style="font-size:1.6rem; font-weight:800; margin-bottom:8px;">Project Title</h3>
-            <div id="modalTags" class="project-tags" style="margin-bottom:16px;"></div>
-            <p id="modalDesc" style="color:var(--text-secondary); line-height:1.7; margin-bottom:24px;"></p>
-            <div style="display:flex; gap:14px;">
-                <a id="modalDemo" href="#" target="_blank" class="btn-primary" style="padding:12px 28px;"><i class="fas fa-arrow-up-right-from-square"></i> Live Demo</a>
-                <a id="modalGithub" href="#" target="_blank" class="btn-secondary" style="padding:12px 28px;"><i class="fab fa-github"></i> Code Repository</a>
-            </div>
-        </div>
-    </div>
-
     <!-- ===== JAVASCRIPT LOGIC ===== -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         // ============================================================
-        //  EMAILJS CONFIGURATION
+        //  EMAILJS INITIALIZATION WITH WORKING USER KEYS
         // ============================================================
-        // Enter your EmailJS Service ID, Template ID, and Public Key below:
-        const EMAILJS_CONFIG = {
-            publicKey: "YOUR_EMAILJS_PUBLIC_KEY",  // e.g. "user_xxxxxxxxxxxx"
-            serviceID: "YOUR_EMAILJS_SERVICE_ID",  // e.g. "service_xxxxxxx"
-            templateID: "YOUR_EMAILJS_TEMPLATE_ID" // e.g. "template_xxxxxxx"
-        };
-
-        // Initialize EmailJS if key exists
         (function() {
-            if (window.emailjs && EMAILJS_CONFIG.publicKey && EMAILJS_CONFIG.publicKey !== "YOUR_EMAILJS_PUBLIC_KEY") {
-                emailjs.init(EMAILJS_CONFIG.publicKey);
-            }
+            emailjs.init("Yei_blMqnDhEjJMTz");
         })();
 
         // ============================================================
-        //  DATA DEFINITIONS (NO TEXT EMOJIS - DEV VECTOR ICONS ONLY)
+        //  USER SPECIFIED SKILLS LIST (DEV VECTOR ICONS)
         // ============================================================
         const skillsData = [
-            { iconClass: 'devicon-react-original colored', name: 'React', level: 95 },
-            { iconClass: 'devicon-nextjs-original', name: 'Next.js', level: 92 },
-            { iconClass: 'devicon-nodejs-plain colored', name: 'Node.js', level: 90 },
-            { iconClass: 'devicon-typescript-plain colored', name: 'TypeScript', level: 88 },
-            { iconClass: 'devicon-python-plain colored', name: 'Python', level: 85 },
-            { iconClass: 'devicon-postgresql-plain colored', name: 'PostgreSQL', level: 86 },
-            { iconClass: 'devicon-mongodb-plain colored', name: 'MongoDB', level: 84 },
-            { iconClass: 'devicon-docker-plain colored', name: 'Docker', level: 80 },
-            { iconClass: 'devicon-tailwindcss-original colored', name: 'Tailwind CSS', level: 94 },
-            { iconClass: 'devicon-amazonwebservices-original colored', name: 'AWS Cloud', level: 78 },
-            { iconClass: 'devicon-git-plain colored', name: 'Git & GitHub', level: 92 },
-            { iconClass: 'devicon-figma-plain colored', name: 'Figma UI/UX', level: 82 }
+            { iconClass: 'devicon-html5-plain colored', name: 'HTML', level: 95 },
+            { iconClass: 'devicon-css3-plain colored', name: 'CSS', level: 92 },
+            { iconClass: 'devicon-javascript-plain colored', name: 'JS (JavaScript)', level: 90 },
+            { iconClass: 'devicon-bootstrap-plain colored', name: 'Bootstrap', level: 88 },
+            { iconClass: 'devicon-php-plain colored', name: 'PHP', level: 88 },
+            { iconClass: 'devicon-laravel-plain colored', name: 'Laravel', level: 92 },
+            { iconClass: 'devicon-mysql-plain colored', name: 'MySQL', level: 86 },
+            { iconClass: 'devicon-microsoftsqlserver-plain colored', name: 'SQL Server', level: 85 },
+            { iconClass: 'devicon-csharp-plain colored', name: 'C#', level: 84 },
+            { iconClass: 'devicon-dotnetcore-plain colored', name: 'ASP.NET Core MVC', level: 86 },
+            { iconClass: 'devicon-angularjs-plain colored', name: 'Angular', level: 80 }
         ];
 
+        // ============================================================
+        //  REAL PORTFOLIO PROJECTS DATA
+        // ============================================================
         const projectsData = [
             {
-                id: 'ecommerce',
-                category: 'fullstack',
-                title: 'E-Commerce Analytics Platform',
-                desc: 'Enterprise e-commerce dashboard with real-time revenue analytics, order tracking, and inventory management.',
-                image: 'assets/images/project_ecommerce.png',
-                tags: ['React', 'Node.js', 'PostgreSQL', 'Chart.js'],
-                demoUrl: '#',
-                githubUrl: 'https://github.com/farrukh984'
+                id: 'p1',
+                category: 'static',
+                num: 'Project — 01',
+                title: 'Ocean Gate Web Hub',
+                desc: 'An elegant, high-performance static web experience built with semantic HTML5, custom CSS3 variables, and vanilla JavaScript. Features a fully responsive, ocean-inspired aesthetic.',
+                image: 'images/Ocean-Gate.png',
+                techs: ['HTML5', 'CSS3', 'JavaScript', 'MySQL'],
+                liveUrl: 'https://farrukh984.github.io/New-Project-1'
             },
             {
-                id: 'saas',
-                category: 'saas',
-                title: 'AI Workflow & SaaS Platform',
-                desc: 'Next-gen AI content generation portal featuring visual prompt editor, automated workflows, and billing system.',
-                image: 'assets/images/project_ai_saas.png',
-                tags: ['Next.js', 'Python', 'OpenAI API', 'Tailwind'],
-                demoUrl: '#',
-                githubUrl: 'https://github.com/farrukh984'
+                id: 'p2',
+                category: 'php',
+                num: 'Project — 02',
+                title: 'Food Pose Portal',
+                desc: 'A dynamic restaurant and workflow management portal engineered using PHP and MySQL. Handles tableside interactive orders, real-time menu management, and client checkout invoices.',
+                image: 'images/Food-Pose.png',
+                techs: ['PHP', 'MySQL', 'Bootstrap'],
+                liveUrl: 'https://food-pose.infinityfreeapp.com'
             },
             {
-                id: 'fintech',
-                category: 'fintech',
-                title: 'FinFlow Crypto & Banking Wallet',
-                desc: 'Sleek digital wallet interface with multi-currency tracking, instant transfers, and encrypted transaction logs.',
-                image: 'assets/images/project_fintech.png',
-                tags: ['TypeScript', 'React Native', 'Express', 'MongoDB'],
-                demoUrl: '#',
-                githubUrl: 'https://github.com/farrukh984'
+                id: 'p3',
+                category: 'php',
+                num: 'Project — 03',
+                title: 'Salon Management Suite',
+                desc: 'A complete online salon business operations platform built using PHP and MySQL. Features visual appointment scheduling, customized service catalog menus, and staff shift administration.',
+                image: 'images/Elegance-Salone.png',
+                techs: ['PHP', 'MySQL', 'CSS3'],
+                liveUrl: 'https://salone.infinityfree.me'
             },
             {
-                id: 'realestate',
-                category: 'fullstack',
-                title: 'Luxury Real Estate Portal',
-                desc: 'Interactive property reservation system with map view filters, virtual tours, and automated booking schedules.',
-                image: 'assets/images/project_realestate.png',
-                tags: ['React', 'GraphQL', 'Tailwind CSS', 'Mapbox'],
-                demoUrl: '#',
-                githubUrl: 'https://github.com/farrukh984'
-            }
-        ];
-
-        const experienceData = [
-            {
-                date: '2023 — Present',
-                title: 'Senior Full-Stack Engineer',
-                company: 'TechVision Solutions',
-                desc: 'Architecting high-scale enterprise applications using React, Next.js, and Node.js microservices. Reduced server latency by 45% and mentored junior developers.'
+                id: 'p4',
+                category: 'laravel',
+                num: 'Project — 04',
+                title: 'E-Commerce Mega-Store',
+                desc: 'A robust, enterprise-grade online shopping solution powered by Laravel and Microsoft SQL Server. Features dynamic inventory synchronization, secure cart flows, and an interactive admin cockpit.',
+                image: 'images/Ecommerce-Store.png',
+                techs: ['Laravel', 'SQL Server', 'Bootstrap'],
+                liveUrl: 'https://ecommerce-backened-design.onrender.com'
             },
             {
-                date: '2021 — 2023',
-                title: 'Full-Stack Web Developer',
-                company: 'CloudNova Systems',
-                desc: 'Engineered responsive web client portals, integrated REST & GraphQL APIs, and implemented automated CI/CD deployment pipelines.'
+                id: 'p5',
+                category: 'laravel',
+                num: 'Project — 05',
+                title: 'SaaS Inventory Analytics',
+                desc: 'A professional real-time stock and logistics tracker engineered in Laravel, JavaScript, and MS SQL Server. Includes supplier records, sales pipelines, and business health charts.',
+                image: 'images/MZ-Inventory.png',
+                techs: ['Laravel', 'SQL Server', 'Vanilla JS'],
+                liveUrl: 'https://inventory-63kl.onrender.com'
             },
             {
-                date: '2019 — 2021',
-                title: 'Frontend Developer',
-                company: 'Digital Edge Agency',
-                desc: 'Crafted pixel-perfect web interfaces, interactive animations, and responsive layouts for over 25 client websites.'
-            }
-        ];
-
-        const testimonialsData = [
-            {
-                text: 'Farrukh delivered our enterprise SaaS platform ahead of schedule with flawless code architecture. His attention to performance and UI design is exceptional.',
-                name: 'Marcus Vance',
-                role: 'CTO, TechVision Global',
-                initial: 'M'
-            },
-            {
-                text: 'Working with Farrukh was a smooth experience. He understood our complex requirements quickly and built a fast, scalable web portal that our users love.',
-                name: 'Sarah Jenkins',
-                role: 'Product Lead, CloudNova',
-                initial: 'S'
-            },
-            {
-                text: 'Extremely talented full-stack engineer. Farrukh transformed our ideas into a sleek, functional product with clean code standards.',
-                name: 'David Miller',
-                role: 'Founder, Miller Ventures',
-                initial: 'D'
+                id: 'p6',
+                category: 'laravel',
+                num: 'Project — 06',
+                title: 'RentalX Premium Fleet',
+                desc: 'An advanced digital vehicle hire platform designed in Laravel and SQL Server. Features filterable car catalogs, automated booking calendars, and custom tenant panels.',
+                image: 'images/Rentalx.png',
+                techs: ['Laravel', 'SQL Server', 'Bootstrap'],
+                liveUrl: 'https://rentalx-7tvb.onrender.com'
             }
         ];
 
@@ -1565,95 +1356,33 @@
         function renderProjects(filter = 'all') {
             const container = document.getElementById('projectsContainer');
             const filtered = filter === 'all' ? projectsData : projectsData.filter(p => p.category === filter);
-            
+
             container.innerHTML = filtered.map((p, i) => `
-                <div class="project-card reveal" style="transition-delay:${i * 0.1}s;">
+                <div class="project-card reveal" style="transition-delay:${i * 0.08}s;">
                     <div class="project-thumb">
                         <img src="${p.image}" alt="${p.title}" />
                         <div class="project-overlay">
-                            <button class="btn-icon" onclick="openProjectModal('${p.id}')" title="View Project Details">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <a href="${p.githubUrl}" target="_blank" class="btn-icon" title="View GitHub Code">
-                                <i class="fab fa-github"></i>
+                            <a href="${p.liveUrl}" target="_blank" class="btn-icon" title="Explore Live">
+                                <i class="fas fa-arrow-up-right-from-square"></i>
                             </a>
                         </div>
                     </div>
                     <div class="project-info">
-                        <div class="project-tags">
-                            ${p.tags.map(t => `<span class="tag-badge">${t}</span>`).join('')}
-                        </div>
+                        <div style="font-size:0.75rem; font-weight:700; color:var(--accent-gold); letter-spacing:1px; text-transform:uppercase; margin-bottom:6px;">${p.num}</div>
                         <h3>${p.title}</h3>
                         <p>${p.desc}</p>
+                        <div class="project-tags">
+                            ${p.techs.map(t => `<span class="tag-badge">${t}</span>`).join('')}
+                        </div>
+                        <a href="${p.liveUrl}" target="_blank" style="color:var(--accent-cyan); font-weight:700; font-size:0.9rem; margin-top:10px; display:inline-flex; align-items:center; gap:8px;">
+                            Explore Live Project <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             `).join('');
 
-            // Re-trigger scroll reveal observer for newly rendered elements
             initReveal();
         }
-
-        function renderExperience() {
-            const container = document.getElementById('timelineContainer');
-            container.innerHTML = experienceData.map((e, i) => `
-                <div class="timeline-item reveal" style="transition-delay:${i * 0.1}s;">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-card">
-                        <span class="timeline-date">${e.date}</span>
-                        <h3>${e.title}</h3>
-                        <div class="timeline-company">${e.company}</div>
-                        <p style="color:var(--text-secondary); font-size:0.95rem;">${e.desc}</p>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function renderTestimonials() {
-            const container = document.getElementById('testimonialsContainer');
-            container.innerHTML = testimonialsData.map((t, i) => `
-                <div class="testimonial-card reveal" style="transition-delay:${i * 0.1}s;">
-                    <div class="rating-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"${t.text}"</p>
-                    <div class="client-profile">
-                        <div class="client-avatar">${t.initial}</div>
-                        <div class="client-info">
-                            <h4>${t.name}</h4>
-                            <p>${t.role}</p>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // ============================================================
-        //  PROJECT MODAL LOGIC
-        // ============================================================
-        function openProjectModal(id) {
-            const project = projectsData.find(p => p.id === id);
-            if (!project) return;
-            document.getElementById('modalImg').src = project.image;
-            document.getElementById('modalTitle').textContent = project.title;
-            document.getElementById('modalDesc').textContent = project.desc;
-            document.getElementById('modalTags').innerHTML = project.tags.map(t => `<span class="tag-badge">${t}</span>`).join('');
-            document.getElementById('modalDemo').href = project.demoUrl;
-            document.getElementById('modalGithub').href = project.githubUrl;
-            document.getElementById('projectModal').classList.add('active');
-        }
-
-        function closeProjectModal() {
-            document.getElementById('projectModal').classList.remove('active');
-        }
-
-        // Close modal when clicking outside card
-        document.getElementById('projectModal').addEventListener('click', (e) => {
-            if (e.target.id === 'projectModal') closeProjectModal();
-        });
 
         // ============================================================
         //  FILTER LOGIC
@@ -1671,32 +1400,49 @@
         }
 
         // ============================================================
-        //  CLIPBOARD HELPER
+        //  TYPING EFFECT FOR HERO ROLE
         // ============================================================
-        function copyToClipboard(text, msg) {
-            navigator.clipboard.writeText(text).then(() => {
-                showToast(msg);
-            });
+        function initTyping() {
+            const roles = ['Full Stack Software Developer', 'Laravel & PHP Specialist', 'ASP.NET Core Developer', 'Modern UI/UX Developer'];
+            let ri = 0, ci = 0, del = false;
+            const typedEl = document.getElementById('typedRole');
+
+            function type() {
+                if (!typedEl) return;
+                const word = roles[ri];
+                if (!del) {
+                    typedEl.textContent = word.slice(0, ++ci);
+                    if (ci === word.length) {
+                        del = true;
+                        setTimeout(type, 2000);
+                        return;
+                    }
+                } else {
+                    typedEl.textContent = word.slice(0, --ci);
+                    if (ci === 0) {
+                        del = false;
+                        ri = (ri + 1) % roles.length;
+                    }
+                }
+                setTimeout(type, del ? 50 : 90);
+            }
+            type();
         }
 
-        function showToast(message) {
-            const toast = document.createElement('div');
-            toast.style.cssText = `
-                position: fixed; bottom: 30px; right: 30px;
-                background: linear-gradient(135deg, #6c5ce7, #00cec9);
-                color: #fff; padding: 14px 24px; border-radius: 12px;
-                font-weight: 700; font-size: 0.92rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                z-index: 100000; opacity: 0; transform: translateY(20px);
-                transition: all 0.4s ease; display: flex; align-items: center; gap: 10px;
-            `;
-            toast.innerHTML = `<i class="fas fa-circle-check"></i> ${message}`;
-            document.body.appendChild(toast);
-            setTimeout(() => { toast.style.opacity = '1'; toast.style.transform = 'translateY(0)'; }, 10);
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                toast.style.transform = 'translateY(20px)';
-                setTimeout(() => toast.remove(), 400);
-            }, 3000);
+        // ============================================================
+        //  STATS COUNTER ANIMATION
+        // ============================================================
+        function animateCounters() {
+            document.querySelectorAll('[data-target]').forEach(el => {
+                const target = +el.dataset.target;
+                let current = 0;
+                const step = Math.max(1, target / 30);
+                const timer = setInterval(() => {
+                    current = Math.min(current + step, target);
+                    el.textContent = Math.floor(current) + '+';
+                    if (current >= target) clearInterval(timer);
+                }, 40);
+            });
         }
 
         // ============================================================
@@ -1711,7 +1457,7 @@
         }
 
         // ============================================================
-        //  SCROLL REVEAL OBSERVER
+        //  REVEAL OBSERVER
         // ============================================================
         function initReveal() {
             const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
@@ -1740,8 +1486,10 @@
             window.addEventListener('scroll', () => {
                 const scroll = window.scrollY;
                 const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const percentage = (scroll / docHeight) * 100;
-                progress.style.width = percentage + '%';
+                if (docHeight > 0) {
+                    const percentage = (scroll / docHeight) * 100;
+                    progress.style.width = percentage + '%';
+                }
 
                 if (scroll > 50) {
                     navbar.classList.add('scrolled');
@@ -1771,7 +1519,7 @@
             const ctx = canvas.getContext('2d');
             let w, h;
             const particles = [];
-            const count = 75;
+            const count = 70;
 
             function resize() {
                 w = canvas.width = window.innerWidth;
@@ -1834,7 +1582,7 @@
         }
 
         // ============================================================
-        //  EMAILJS CONTACT FORM SUBMISSION
+        //  EMAILJS FORM SUBMISSION (USER WORKING KEYS INTEGRATED)
         // ============================================================
         function initContactForm() {
             const form = document.getElementById('contactForm');
@@ -1843,64 +1591,75 @@
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
 
-                const originalText = btn.innerHTML;
-                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Transmitting...';
+                const name = document.getElementById('contactName').value.trim();
+                const email = document.getElementById('contactEmail').value.trim();
+                const subject = document.getElementById('contactSubject').value.trim() || 'New Portfolio Contact';
+                const msg = document.getElementById('contactMessage').value.trim();
+
+                if (!name || !email || !msg) {
+                    Swal.fire({
+                        icon: 'warning',
+                        title: 'Missing Information',
+                        text: 'Please fill out your Name, Email, and Message before sending.',
+                        customClass: { popup: 'swal-dark-popup' },
+                        confirmButtonColor: '#6c5ce7'
+                    });
+                    return;
+                }
+
+                const prevText = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin" style="margin-right:8px;"></i> Transmitting Message...';
                 btn.disabled = true;
 
-                // Check if user has configured EmailJS credentials
-                if (window.emailjs && EMAILJS_CONFIG.publicKey && EMAILJS_CONFIG.publicKey !== "YOUR_EMAILJS_PUBLIC_KEY") {
-                    emailjs.sendForm(EMAILJS_CONFIG.serviceID, EMAILJS_CONFIG.templateID, form)
-                        .then(() => {
-                            btn.innerHTML = '<i class="fas fa-circle-check"></i> Message Sent Successfully!';
-                            btn.style.background = 'linear-gradient(135deg, #00b894, #00cec9)';
-                            showToast('Your message has been sent to Farrukh!');
-                            form.reset();
-                            setTimeout(() => {
-                                btn.innerHTML = originalText;
-                                btn.style.background = '';
-                                btn.disabled = false;
-                            }, 3500);
-                        }, (error) => {
-                            console.error('EmailJS Error:', error);
-                            btn.innerHTML = '<i class="fas fa-circle-xmark"></i> Failed to Send';
-                            btn.style.background = 'linear-gradient(135deg, #ff7675, #d63031)';
-                            showToast('Email transmission error. Please try again!');
-                            setTimeout(() => {
-                                btn.innerHTML = originalText;
-                                btn.style.background = '';
-                                btn.disabled = false;
-                            }, 3500);
-                        });
-                } else {
-                    // Demonstration mode (when EmailJS credentials are default placeholders)
-                    setTimeout(() => {
-                        btn.innerHTML = '<i class="fas fa-circle-check"></i> Message Sent!';
-                        btn.style.background = 'linear-gradient(135deg, #00b894, #00cec9)';
-                        showToast('Message sent successfully! Add your EmailJS key in index.html script to receive live emails.');
-                        form.reset();
-                        setTimeout(() => {
-                            btn.innerHTML = originalText;
-                            btn.style.background = '';
-                            btn.disabled = false;
-                        }, 3500);
-                    }, 1200);
-                }
+                // Send email via EmailJS using user's active keys
+                emailjs.send('service_9uykqkp', 'template_owdw35i', {
+                    from_name: name,
+                    from_email: email,
+                    subject: subject,
+                    message: msg
+                })
+                .then(() => {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Message Sent Successfully!',
+                        text: 'Thank you for reaching out, Muhammad Farrukh has received your email and will respond shortly.',
+                        customClass: { popup: 'swal-dark-popup' },
+                        confirmButtonColor: '#00cec9'
+                    });
+
+                    form.reset();
+                    btn.innerHTML = prevText;
+                    btn.disabled = false;
+                })
+                .catch((error) => {
+                    console.error('EmailJS Delivery Error:', error);
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Delivery Failed',
+                        text: 'Unable to send message via EmailJS. Please try again or reach out directly to farrokh984@gmail.com.',
+                        customClass: { popup: 'swal-dark-popup' },
+                        confirmButtonColor: '#fd79a8'
+                    });
+
+                    btn.innerHTML = prevText;
+                    btn.disabled = false;
+                });
             });
         }
 
         // ============================================================
-        //  INIT ON DOM LOADED
+        //  DOM LOADED INITIALIZATION
         // ============================================================
         document.addEventListener('DOMContentLoaded', () => {
             renderSkills();
             renderProjects();
-            renderExperience();
-            renderTestimonials();
             initFilters();
+            initTyping();
             initReveal();
             initScrollEffects();
             initParticles();
             initContactForm();
+            setTimeout(animateCounters, 600);
         });
     </script>
 </body>
